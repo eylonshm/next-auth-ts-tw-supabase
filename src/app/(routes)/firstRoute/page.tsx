@@ -9,7 +9,6 @@ const getData = async () => {
 
   const { data, error } = await supabase.from("notes").select();
 
-  console.log("data =>", data);
   if (error) {
     console.error(error);
   }
