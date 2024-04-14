@@ -8,22 +8,32 @@ export interface ButtonProps
   text?: string;
   children?: React.ReactNode | string;
   onClick?: () => void;
+  disabled?: boolean;
+  loading?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   text,
   onClick,
+  loading: loadingProp,
+  disabled: disabledProp,
   ...rest
 }) => {
-  const { pending: loading } = useFormStatus();
+  const { pending: formLoading } = useFormStatus();
+  const isLoading = loadingProp || formLoading;
+  const isDisabled = disabledProp || isLoading;
   return (
     <button
-      onClick={onClick}
+      onClick={() => {
+        if (isDisabled) return;
+        onClick?.();
+      }}
       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+      disabled={isDisabled}
       {...rest}
     >
-      {loading ? "Loading..." : text || children}
+      {isLoading ? "Loading..." : text || children}
     </button>
   );
 };
