@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
 import { NavBar } from "./components/organisms";
-import { createServerClient } from "./utils";
 import { AuthProvider } from "./HOC";
 
 const inter = Inter({ subsets: ["latin"] });
