@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { createServerClient } from "@/app/utils/supabase/server";
 import { Note } from "@/types";
-import { revalidatePath } from "next/cache";
 
 const getData = async () => {
   "use server";
