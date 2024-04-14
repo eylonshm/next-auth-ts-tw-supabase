@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import clsx from "clsx";
 import { NavBar } from "./components/organisms";
 import { AuthProvider } from "./HOC";
+import { ChatBubble } from "./components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ChatBubble />
       <body className={clsx(inter.className, "flex min-h-screen flex-col")}>
         <NavBar />
         <AuthProvider>{children}</AuthProvider>
