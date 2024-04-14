@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { Input, Button } from "./components";
 import { sendEmail } from "./utils/emails";
-import { ShowList } from "./components/organisms";
 import { ItemsList } from "./components/pages/ItemsList/itemsList";
 
 const EMAIL_INPUT_ID = "email";
