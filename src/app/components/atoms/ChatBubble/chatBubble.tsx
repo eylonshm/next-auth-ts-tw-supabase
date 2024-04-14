@@ -5,7 +5,7 @@ import { Crisp } from "crisp-sdk-web";
 
 export const ChatBubble = () => {
   useEffect(() => {
-    Crisp.configure("537668b5-fd32-4792-a12f-8a28e3a87ad9", {
+    Crisp.configure(process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID!, {
       // Change the locale to your preferred language
       locale: "en",
     });
