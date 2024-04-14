@@ -20,13 +20,13 @@ export const sendEmail = async (formData: FormData) => {
   if (!email) return;
 
   const msg = createMessage({ from: DEFAULT_FROM_EMAIL, to: email as string });
-  return sgMail
-    .send(msg)
-    .then(() => {
-      console.log("Email sent");
-    })
-    .catch((error) => {
-      console.error("Error sending email");
-      console.error(error);
-    });
+  try {
+    await sgMail.send(msg);
+    console.log("Email sent");
+    return true;
+  } catch (error) {
+    console.error("Error sending email");
+    console.error(error);
+    return false;
+  }
 };
