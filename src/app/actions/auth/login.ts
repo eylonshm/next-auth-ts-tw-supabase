@@ -13,10 +13,10 @@ export const login = async (email: string, password: string) => {
     if (signInError) return;
 
     const { access_token, refresh_token } = data.session;
-    // await supabase.auth.setSession({
-    //   access_token,
-    //   refresh_token,
-    // });
+    await supabase.auth.setSession({
+      access_token,
+      refresh_token,
+    });
   } catch {
     console.error("Error logging in1");
   }

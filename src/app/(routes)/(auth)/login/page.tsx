@@ -43,20 +43,6 @@ const Login = () => {
       <span className="text-center text-sm text-gray-500">
         Dont have account yet? <Link href="/register">Register</Link>
       </span>
-
-      <script>
-        {`
-          window.$crisp=[];
-          window.CRISP_WEBSITE_ID="537668b5-fd32-4792-a12f-8a28e3a87ad9";
-          (function(){
-            d=document;
-            s=d.createElement("script");
-            s.src="https://client.crisp.chat/l.js";
-            s.async=1;
-            d.getElementsByTagName("head")[0].appendChild(s);
-          })();
-        `}
-      </script>
     </div>
   );
 };
