@@ -18,12 +18,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = createServerClient();
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
   return (
     <html lang="en">
       <body className={clsx(inter.className, "flex min-h-screen flex-col")}>
