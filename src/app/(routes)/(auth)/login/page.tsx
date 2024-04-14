@@ -14,10 +14,7 @@ const Login = () => {
     setLoading(true);
     try {
       await login(email, password);
-      setLoading(false);
     } catch (error) {
-      console.error("Error logging in2");
-      console.error(error);
       setLoading(false);
     }
   }, [email, password]);
