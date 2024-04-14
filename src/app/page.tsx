@@ -1,5 +1,8 @@
+import { Suspense } from "react";
 import { Input, Button } from "./components";
 import { sendEmail } from "./utils/emails";
+import { ShowList } from "./components/organisms";
+import { ItemsList } from "./components/pages/ItemsList/itemsList";
 
 const EMAIL_INPUT_ID = "email";
 
@@ -12,6 +15,9 @@ export default function Home() {
           <Input id="email" name="email" placeholder="Enter your email" />
           <Button text="Send Email" type="submit" />
         </form>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ItemsList />
+        </Suspense>
       </div>
     </main>
   );
