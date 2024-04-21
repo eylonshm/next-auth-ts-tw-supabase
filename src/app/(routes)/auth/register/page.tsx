@@ -26,7 +26,7 @@ const Register = () => {
       />
       <Button text="Register" onClick={onClickResigter} />
       <span className="text-center text-sm text-gray-500">
-        Have an account already? <Link href="/login">Login</Link>
+        Have an account already? <Link href="/auth/login">Login</Link>
       </span>
     </div>
   );

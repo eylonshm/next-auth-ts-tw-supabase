@@ -18,8 +18,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         data: { user },
       } = await supabase.auth.getUser();
 
-      if (!user) router.push("/login");
-      if (user && pathName === "/login") router.push("/");
+      if (!user && !pathName.startsWith("/auth")) router.push("/auth/login");
+      if (user && pathName === "/auth/login") router.push("/");
     })();
   });
 

@@ -1,9 +1,9 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import { login } from "@/app/actions";
 import { Button, Input } from "@/app/components";
 import Link from "next/link";
-import { useCallback, useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -38,7 +38,7 @@ const Login = () => {
       />
       <Button text="Login" onClick={onClickLogin} loading={loading} />
       <span className="text-center text-sm text-gray-500">
-        Dont have account yet? <Link href="/register">Register</Link>
+        Dont have account yet? <Link href="/auth/register">Register</Link>
       </span>
     </div>
   );
